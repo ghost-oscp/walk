@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.70 scan initiated Tue Jul 24 03:46:46 2018 as: nmap -p 22 -sV -&#45;script=ssh-hostkey -oA /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_22_ssh-hostkey 192.168.0.102 -->
+<nmaprun scanner="nmap" args="nmap -p 22 -sV -&#45;script=ssh-hostkey -oA /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_22_ssh-hostkey 192.168.0.102" start="1532418406" startstr="Tue Jul 24 03:46:46 2018" version="7.70" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="22"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1532418407" endtime="1532418407"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.0.102" addrtype="ipv4"/>
+<address addr="00:0C:29:53:19:4C" addrtype="mac" vendor="VMware"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="OpenSSH" version="3.9p1" extrainfo="protocol 1.99" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:3.9p1</cpe></service><script id="ssh-hostkey" output="&#xa;  1024 8f:3e:8b:1e:58:63:fe:cf:27:a3:18:09:3b:52:cf:72 (RSA1)&#xa;  1024 34:6b:45:3d:ba:ce:ca:b2:53:55:ef:1e:43:70:38:36 (DSA)&#xa;  1024 68:4d:8c:bb:b6:5a:bd:79:71:b8:71:47:ea:00:42:61 (RSA)"><table>
+<elem key="bits">1024</elem>
+<elem key="fingerprint">8f3e8b1e5863fecf27a318093b52cf72</elem>
+<elem key="type">rsa1</elem>
+<elem key="key">35 149174282886581624883868648302761292182406879108668063702143177994710569161669502445416601666211201346192352271911333433971833283425439634231257314174441054335295864218587993634534355128377261436615077053235666774641007412196140534221696911370388178873572900977872600139866890316021962605461192127591516843621</elem>
+</table>
+<table>
+<elem key="bits">1024.0</elem>
+<elem key="fingerprint">346b453dbacecab25355ef1e43703836</elem>
+<elem key="type">ssh-dss</elem>
+<elem key="key">AAAAB3NzaC1kc3MAAACBAOWJ2N2BPBPm0HxCi630ZxHtTNMh+uVkeYCkKVNxavZkcJdpfFTOGZp054sj27mVZVtCeNMHhzAUpvRisn/cH4k4plLd1m8HACAVPtcgRrshCzb7wzQikrP+byCVypE0RpkQcDya+ngDMVzrkA+9KQSR/5W6BjldLW60A5oZgyfvAAAAFQC/iRZe4LlaYXwHvYYDpjnoCPY3xQAAAIBKFGl/zr/u1JxCV8a9dIAMIE0rk0jYtwvpDCdBre450ruoLII/hsparzdJs898SMWX1kEzigzUdtobDVT8nWdJAVRHCm8ruy4IQYIdtjYowXD7hxZTy/F0xOsiTRWBYMQPe8lW1oA+xabqlnCO3ppjmBecVlCwEMoeefnwGWAkxwAAAIAKajcioQiMDYW7veV13Yjmag6wyIia9+V9aO8JmgMi3cNr04Vl0FF+n7OIZ5QYvpSKcQgRzwNylEW5juV0Xh96m2g3rqEvDd4kTttCDlOltPgP6q6Z8JI0IGzcIGYBy6UWdIxj9D7F2ccc7fAM2o22+qgFp+FFiLeFDVbRhYz4sg==</elem>
+</table>
+<table>
+<elem key="bits">1024.0</elem>
+<elem key="fingerprint">684d8cbbb65abd7971b87147ea004261</elem>
+<elem key="type">ssh-rsa</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAABIwAAAIEA4j5XFFw9Km2yphjpu1gzDBglGSpMxtR8zOvpH9gUbOMXXbCQeXgOK3rs4cs/j75G54jALm99Ky7tgToNaEuxmQmwnpYk9bntoDu9SkiT/hPZdOwq40yrfWIHzlUNWTpY3okTdf/YNUAdl4NOBOYbf0x/dsAdHHqSWnvZmruFA6M=</elem>
+</table>
+</script></port>
+</ports>
+<times srtt="225" rttvar="3754" to="100000"/>
+</host>
+<runstats><finished time="1532418407" timestr="Tue Jul 24 03:46:47 2018" elapsed="1.10" summary="Nmap done at Tue Jul 24 03:46:47 2018; 1 IP address (1 host up) scanned in 1.10 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

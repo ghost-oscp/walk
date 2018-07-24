@@ -1,0 +1,60 @@
+[*] Found MSRPC service on 192.168.0.102:111
+   [*] Enumeration
+      [=] rpcclient -U "" 192.168.0.102
+   [*] Bruteforce
+      [=] rpcclient -U "" 192.168.0.102
+
+[*] Found HTTP service on 192.168.0.102:80
+   [*] Enumeration
+      [=] dirb http://192.168.0.102:80/ -o /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_80_dirb.txt
+      [=] dirbuster -H -u http://192.168.0.102:80/ -l /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -t 20 -s / -v -r /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_80_dirbuster_medium.txt
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://192.168.0.102:80/ -s '200,204,301,302,307,403,500' -e | tee '/root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_80_gobuster_common.txt'
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -u http://192.168.0.102:80/ -s '200,204,301,307,403,500' -e | tee '/root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_80_gobuster_cgis.txt'
+
+[*] Found HTTP/S service on 192.168.0.102:80
+   [*] Enumeration
+      [=] nikto -h 192.168.0.102 -p 80 -output /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_80_nikto.txt
+      [=] curl -i 192.168.0.102:80
+      [=] w3m -dump 192.168.0.102/robots.txt | tee /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_80_robots.txt
+      [=] VHostScan -t 192.168.0.102 -oN /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_80_vhosts.txt
+
+[*] Found HTTP service on 192.168.0.102:443
+   [*] Enumeration
+      [=] dirb http://192.168.0.102:443/ -o /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_443_dirb.txt
+      [=] dirbuster -H -u http://192.168.0.102:443/ -l /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -t 20 -s / -v -r /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_443_dirbuster_medium.txt
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://192.168.0.102:443/ -s '200,204,301,302,307,403,500' -e | tee '/root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_443_gobuster_common.txt'
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -u http://192.168.0.102:443/ -s '200,204,301,307,403,500' -e | tee '/root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_443_gobuster_cgis.txt'
+
+[*] Found HTTPS service on 192.168.0.102:443
+   [*] Enumeration
+      [=] dirb https://192.168.0.102:443/ -o /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_443_dirb.txt
+      [=] dirbuster -H -u https://192.168.0.102:443/ -l /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -t 20 -s / -v -r /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_443_dirbuster_medium.txt
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/common.txt -u https://192.168.0.102:443/ -s '200,204,301,302,307,403,500' -e | tee '/root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_443_gobuster_common.txt'
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -u https://192.168.0.102:443/ -s '200,204,301,307,403,500' -e | tee '/root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_443_gobuster_cgis.txt'
+
+[*] Found HTTP/S service on 192.168.0.102:443
+   [*] Enumeration
+      [=] nikto -h 192.168.0.102 -p 443 -output /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_443_nikto.txt
+      [=] curl -i 192.168.0.102:443
+      [=] w3m -dump 192.168.0.102/robots.txt | tee /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_443_robots.txt
+      [=] VHostScan -t 192.168.0.102 -oN /root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_443_vhosts.txt
+
+[*] Found CUPS service on 192.168.0.102:631
+   [*] Find public exploits
+      [=] searchsploit cups
+
+[*] Found SSH service on 192.168.0.102:22
+   [*] Bruteforcing
+      [=] medusa -u root -P /usr/share/wordlists/rockyou.txt -e ns -h 192.168.0.102 - 22 -M ssh
+      [=] hydra -f -V -t 1 -l root -P /usr/share/wordlists/rockyou.txt -s 22 192.168.0.102 ssh
+      [=] ncrack -vv -p 22 --user root -P PASS_LIST 192.168.0.102
+   [*] Use nmap to automate banner grabbing and key fingerprints, e.g.
+      [=] nmap 192.168.0.102 -p 22 -sV --script=ssh-hostkey -oA '/root/Documents/walk/vulnhub/kioptrix_lev2/192.168.0.102/scans/192.168.0.102_22_ssh-hostkey'
+
+[*] Found MySql service on 192.168.0.102:3306
+   [*] Check out the server for web applications with sqli vulnerabilities
+      [=] searchsploit mysql
+
+
+
+[*] Always remember to manually go over the portscan report and carefully read between the lines ;)
